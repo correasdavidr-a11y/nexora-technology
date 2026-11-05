@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="NEXORA TECHNOLOGY conecta fabricantes tecnológicos internacionales con oportunidades comerciales en España.">
+<title>NEXORA TECHNOLOGY | Representación comercial en España</title>
+<style>
+:root {
+  color-scheme: light dark;
+  --site-primary: #123c63;
+  --site-secondary: #087db8;
+  --site-background: #061321;
+  --site-on-primary: #ffffff;
+  --site-on-secondary: #ffffff;
+  --site-on-background: #edf6ff;
+  --site-font-body: Inter, "Segoe UI", Arial, sans-serif;
+  --site-font-heading: Inter, "Segoe UI", Arial, sans-serif;
+  --site-heading-scale: 1;
+  --site-spacing-scale: 1;
+  --site-radius-scale: 1;
+  --site-decoration-opacity: 1;
+  --surface: light-dark(#ffffff, #0b1b2b);
+  --surface-soft: light-dark(#edf4fa, #10263b);
+  --text: light-dark(#102235, #edf6ff);
+  --muted: light-dark(#53677b, #a9bfd2);
+  --line: light-dark(#d6e1eb, #24435e);
+  --accent: #20b9f2;
+  --accent-soft: #80d9ff;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { margin: 0; font-family: var(--site-font-body); background: var(--site-background); color: var(--site-on-background); }
+#app { min-height: 100vh; width: 100%; border-radius: 0; overflow: hidden; background: light-dark(#f5f8fb, #061321); color: var(--text); }
+a { color: inherit; text-decoration: none; }
+button, input, textarea, select { font: inherit; }
+.container { width: min(1160px, calc(100% - 44px)); margin: auto; }
+header { position: sticky; top: 0; z-index: 20; background: light-dark(rgba(7,24,42,.97), rgba(4,15,27,.96)); border-bottom: 1px solid rgba(85,178,225,.35); backdrop-filter: blur(14px); }
+.nav { height: 78px; display: flex; align-items: center; justify-content: space-between; gap: 24px; color: #f1f8ff; }
+.brand { display: flex; align-items: center; gap: 11px; min-width: 220px; }
+.brand-mark { width: 39px; height: 39px; border: 2px solid #27baf4; border-radius: 12px 3px 12px 3px; transform: rotate(-12deg); display: grid; place-items: center; color: #b9edff; font-weight: 800; font-size: 17px; box-shadow: 0 0 20px rgba(32,185,242,.25); }
+.brand-name { font-size: 20px; font-weight: 800; letter-spacing: 2px; line-height: 1; }
+.brand-name span { display: block; color: #28bdf6; font-size: 10px; letter-spacing: 5px; margin-top: 6px; }
+.navlinks { display: flex; align-items: center; gap: 27px; font-size: 13px; color: #d5e5f2; }
+.navlinks a:hover { color: #42c8ff; }
+.nav-cta, .btn { display: inline-flex; justify-content: center; align-items: center; gap: 9px; border: 1px solid #28bdf6; background: linear-gradient(135deg,#087eb9,#15527f); color: white; border-radius: 999px; padding: 12px 20px; font-weight: 700; font-size: 13px; box-shadow: 0 7px 25px rgba(0,151,220,.2); transition: transform .2s, box-shadow .2s; }
+.btn:hover, .nav-cta:hover { transform: translateY(-2px); box-shadow: 0 10px 30px rgba(0,151,220,.34); }
+.menu-btn { display: none; border: 1px solid #31516c; background: transparent; color: white; padding: 9px 12px; border-radius: 9px; }
+.hero { position: relative; overflow: hidden; background: radial-gradient(ellipse at 78% 28%, rgba(10,116,180,.35), transparent 38%), linear-gradient(120deg,#061321 0%,#0b2944 55%,#061321 100%); color: #f3f9ff; padding: 92px 0 86px; }
+.hero:before, .hero:after { content:""; position:absolute; border:1px solid rgba(43,183,239,.17); border-radius:50%; width:560px; height:560px; right:-110px; top:-220px; opacity:var(--site-decoration-opacity); pointer-events:none; }
+.hero:after { width:410px; height:410px; right:-30px; top:-145px; }
+.hero-grid { position: relative; z-index:1; display:grid; grid-template-columns: 1.15fr .85fr; align-items:center; gap:55px; }
+.eyebrow { color:#62d1ff; text-transform:uppercase; letter-spacing:3px; font-size:11px; font-weight:800; }
+h1,h2,h3 { font-family:var(--site-font-heading); }
+h1 { font-size: clamp(42px,6vw,70px); line-height:1.02; letter-spacing:-2px; margin:18px 0; }
+.gradient { background:linear-gradient(100deg,#fff 10%,#9edfff 55%,#36b9f5); color:transparent; background-clip:text; }
+.hero-copy { max-width:610px; color:#c4d9e9; font-size:17px; line-height:1.75; }
+.hero-actions { display:flex; gap:13px; flex-wrap:wrap; margin-top:30px; }
+.btn-outline { display:inline-flex; align-items:center; justify-content:center; padding:12px 19px; border:1px solid rgba(151,208,238,.55); border-radius:999px; color:#e5f5ff; font-size:13px; font-weight:700; }
+.hero-note { margin-top:28px; color:#91aec5; font-size:12px; letter-spacing:.4px; }
+.hero-visual { min-height:360px; display:grid; place-items:center; position:relative; }
+.globe { width:min(340px,80vw); aspect-ratio:1; border-radius:50%; background:radial-gradient(circle at 38% 35%,#a8e8ff 0%,#178bc4 4%,#0b3557 27%,#061321 66%); border:1px solid rgba(73,194,245,.6); box-shadow:inset -25px -20px 65px #020a12,0 0 65px rgba(20,157,221,.3); position:relative; display:grid; place-items:center; }
+.globe:before,.globe:after { content:""; position:absolute; inset:12%; border:1px solid rgba(90,208,255,.45); border-radius:50%; transform:rotate(28deg) scaleX(.55); }
+.globe:after { transform:rotate(-28deg) scaleX(.55); }
+.globe-core { color:#b9edff; text-align:center; text-shadow:0 0 20px #2dbdf5; z-index:1; }
+.globe-core strong { display:block; font-size:37px; letter-spacing:5px; }
+.globe-core span { font-size:10px; letter-spacing:4px; }
+.orbit { position:absolute; width:118%; height:34%; border:1px solid rgba(52,194,248,.75); border-radius:50%; transform:rotate(-24deg); box-shadow:0 0 18px rgba(36,184,240,.24); }
+.stats { background:var(--surface); border-bottom:1px solid var(--line); }
+.stats-row { display:grid; grid-template-columns:repeat(3,1fr); gap:20px; padding:25px 0; }
+.stat { text-align:center; border-right:1px solid var(--line); }
+.stat:last-child { border:0; }
+.stat strong { display:block; color:var(--secondary, #0a8bc8); font-size:15px; letter-spacing:1px; }
+.stat span { color:var(--muted); font-size:12px; }
+section { padding:82px 0; }
+.section-head { max-width:720px; margin-bottom:34px; }
+.section-head h2 { font-size:calc(34px * var(--site-heading-scale)); letter-spacing:-1px; margin:12px 0; }
+.section-head p { color:var(--muted); line-height:1.7; margin:0; }
+.products { background:var(--surface-soft); }
+.product-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:16px; }
+.product { background:var(--surface); border:1px solid var(--line); border-radius:calc(16px * var(--site-radius-scale)); padding:22px; min-height:205px; transition:transform .2s,border-color .2s; }
+.product:hover { transform:translateY(-4px); border-color:#35b9ee; }
+.product-icon { width:43px; height:43px; display:grid; place-items:center; color:#1baee9; background:rgba(27,174,233,.1); border:1px solid rgba(27,174,233,.3); border-radius:12px; font-size:22px; }
+.product h3 { font-size:16px; margin:17px 0 8px; }
+.product p { color:var(--muted); font-size:13px; line-height:1.6; margin:0; }
+.product small { display:block; margin-top:12px; color:#168ec3; font-size:11px; font-weight:700; }
+.split { display:grid; grid-template-columns:1fr 1fr; gap:54px; align-items:center; }
+.feature-panel { background:linear-gradient(145deg,#0a2944,#071522); border:1px solid #1c587c; color:#eaf7ff; border-radius:20px; padding:32px; box-shadow:0 18px 50px rgba(0,20,40,.12); }
+.feature-panel h3 { font-size:22px; margin:0 0 18px; }
+.feature-list { display:grid; gap:17px; }
+.feature-item { display:flex; gap:13px; align-items:flex-start; }
+.check { color:#4bd0ff; font-size:18px; }
+.feature-item strong { display:block; font-size:14px; margin-bottom:4px; }
+.feature-item span:last-child { color:#aac6da; font-size:12px; line-height:1.55; }
+.steps { display:grid; grid-template-columns:repeat(3,1fr); gap:18px; }
+.step { border-top:2px solid #1baee9; padding:22px 18px; background:var(--surface); border-radius:0 0 14px 14px; }
+.step b { color:#129ed8; font-size:12px; letter-spacing:2px; }
+.step h3 { margin:12px 0 8px; font-size:17px; }
+.step p { color:var(--muted); font-size:13px; line-height:1.6; margin:0; }
+.contact { background:linear-gradient(120deg,#071522,#0b2b47); color:#f2f9ff; }
+.contact .section-head p { color:#b4cadb; }
+.contact-grid { display:grid; grid-template-columns:.85fr 1.15fr; gap:42px; }
+.contact-info p { color:#b4cadb; line-height:1.7; font-size:14px; }
+.contact-card { background:#f7fbff; color:#102235; border-radius:18px; padding:26px; }
+.field { display:grid; gap:7px; margin-bottom:15px; }
+.field label { font-size:12px; font-weight:700; }
+.field input,.field select,.field textarea { width:100%; border:1px solid #cfdae4; border-radius:9px; padding:12px; color:#142b40; background:white; outline:none; }
+.field input:focus,.field select:focus,.field textarea:focus { border-color:#139bd4; box-shadow:0 0 0 3px rgba(19,155,212,.12); }
+.field textarea { min-height:105px; resize:vertical; }
+.form-note { color:#64788a; font-size:11px; line-height:1.5; margin-top:10px; }
+footer { background:#030c15; color:#9cb2c5; padding:28px 0; font-size:12px; }
+.footer-row { display:flex; justify-content:space-between; gap:20px; flex-wrap:wrap; align-items:center; }
+footer strong { color:#e8f6ff; letter-spacing:2px; }
+@media(max-width:900px) { .navlinks { display:none; position:absolute; top:78px; left:0; right:0; padding:20px 25px; background:#071522; flex-direction:column; align-items:flex-start; border-bottom:1px solid #24435e; } .navlinks.open { display:flex; } .menu-btn { display:block; } .nav-cta { display:none; } .hero-grid,.split,.contact-grid { grid-template-columns:1fr; } .hero { padding:70px 0; } .hero-visual { min-height:280px; } .product-grid { grid-template-columns:repeat(2,1fr); } }
+@media(max-width:560px) { .container { width:min(100% - 30px,1160px); } .brand { min-width:0; } .brand-name { font-size:16px; } .hero-copy { font-size:15px; } .stats-row { grid-template-columns:1fr; gap:15px; } .stat { border-right:0; border-bottom:1px solid var(--line); padding-bottom:13px; } .stat:last-child { border:0; } section { padding:60px 0; } .product-grid,.steps { grid-template-columns:1fr; } .feature-panel { padding:23px; } }
+</style>
+</head>
+<body>
+<div id="app">
+<header>
+  <div class="container nav">
+    <a class="brand" href="#inicio" aria-label="NEXORA TECHNOLOGY inicio"><span class="brand-mark">N</span><span class="brand-name">NEXORA<span>TECHNOLOGY</span></span></a>
+    <nav class="navlinks" id="navlinks"><a href="#inicio">Inicio</a><a href="#productos">Tecnologías</a><a href="#servicios">Servicios</a><a href="#fabricantes">Fabricantes</a><a href="#contacto">Contacto</a></nav>
+    <a class="nav-cta" href="#contacto">Hablemos de negocio ↗</a>
+    <button class="menu-btn" id="menuBtn" aria-label="Abrir menú" aria-expanded="false">☰</button>
+  </div>
+</header>
+<main>
+<section class="hero" id="inicio">
+  <div class="container hero-grid">
+    <div>
+      <div class="eyebrow">Representación · Desarrollo comercial · Tecnología</div>
+      <h1>Conectamos innovación con <span class="gradient">oportunidades reales.</span></h1>
+      <p class="hero-copy">Impulsamos la introducción de soluciones tecnológicas internacionales en el mercado español. Conectamos fabricantes con empresas y ayudamos a transformar buenos productos en nuevas oportunidades de negocio.</p>
+      <div class="hero-actions"><a class="btn" href="#productos">Explorar tecnologías <span>→</span></a><a class="btn-outline" href="#fabricantes">Colaborar como fabricante</a></div>
+      <div class="hero-note">NEXORA TECHNOLOGY · REPRESENTACIÓN COMERCIAL EN ESPAÑA</div>
+    </div>
+    <div class="hero-visual" aria-label="Ilustración abstracta de conexiones tecnológicas globales"><div class="globe"><div class="orbit"></div><div class="globe-core"><strong>NX</strong><span>TECHNOLOGY NETWORK</span></div></div></div>
+  </div>
+</section>
+<div class="stats"><div class="container stats-row"><div class="stat"><strong>CONEXIÓN INTERNACIONAL</strong><span>Fabricantes y mercado español</span></div><div class="stat"><strong>DESARROLLO COMERCIAL</strong><span>Prospección y nuevas oportunidades</span></div><div class="stat"><strong>SIETE ÁREAS TECNOLÓGICAS</strong><span>Soluciones para distintos sectores</span></div></div></div>
+<section class="products" id="productos">
+ <div class="container">
+  <div class="section-head"><div class="eyebrow">Áreas de interés</div><h2>Tecnología con potencial comercial</h2><p>Exploramos soluciones innovadoras para empresas, profesionales y distribuidores. Estas son nuestras líneas iniciales de producto.</p></div>
+  <div class="product-grid">
+   <article class="product"><div class="product-icon">◈</div><h3>01 · Hologramas 3D</h3><p>Displays holográficos y soluciones visuales para publicidad, escaparates, eventos y espacios comerciales.</p><small>PUBLICIDAD · RETAIL · EVENTOS</small></article>
+   <article class="product"><div class="product-icon">⌁</div><h3>02 · Cámaras térmicas</h3><p>Herramientas de inspección térmica para mantenimiento, instalaciones, eficiencia y aplicaciones profesionales.</p><small>INDUSTRIA · INSTALACIONES · MANTENIMIENTO</small></article>
+   <article class="product"><div class="product-icon">◉</div><h3>03 · Gafas inteligentes</h3><p>Dispositivos wearables y soluciones de asistencia conectada para el trabajo y el día a día.</p><small>WEARABLES · MOVILIDAD · PRODUCTIVIDAD</small></article>
+   <article class="product"><div class="product-icon">⌖</div><h3>04 · Cámaras de seguridad</h3><p>Sistemas de videovigilancia y monitorización para comercios, instalaciones y entornos profesionales.</p><small>SEGURIDAD · MONITORIZACIÓN</small></article>
+   <article class="product"><div class="product-icon">✣</div><h3>05 · Drones profesionales</h3><p>Soluciones aéreas para captura de imágenes, inspección, supervisión y documentación visual.</p><small>INSPECCIÓN · IMAGEN · SUPERVISIÓN</small></article>
+   <article class="product"><div class="product-icon">ϟ</div><h3>06 · Energía portátil</h3><p>Estaciones de energía y soluciones portátiles para movilidad, trabajo y respaldo energético.</p><small>ENERGÍA · MOVILIDAD · AUTONOMÍA</small></article>
+   <article class="product"><div class="product-icon">♫</div><h3>07 · Grabadoras de voz con IA</h3><p>Dispositivos que graban reuniones y generan transcripciones, resúmenes y puntos clave para ahorrar tiempo.</p><small>COMERCIALES · EMPRESARIOS · ESTUDIANTES · PROFESIONALES</small></article>
+  </div>
+ </div>
+</section>
+<section id="servicios">
+ <div class="container split">
+  <div><div class="eyebrow">Qué hacemos</div><div class="section-head"><h2>Desarrollo comercial de principio a fin</h2><p>Ayudamos a acercar productos tecnológicos al mercado español mediante relaciones comerciales claras, conocimiento del cliente y seguimiento de oportunidades.</p></div><a class="btn" href="#contacto">Consultar una colaboración →</a></div>
+  <div class="feature-panel"><h3>Servicios de representación</h3><div class="feature-list">
+   <div class="feature-item"><span class="check">✦</span><div><strong>Prospección de mercado</strong><span>Identificación de sectores, empresas y posibles canales de distribución en España.</span></div></div>
+   <div class="feature-item"><span class="check">✦</span><div><strong>Generación de oportunidades</strong><span>Presentación de productos y contacto inicial con potenciales clientes profesionales.</span></div></div>
+   <div class="feature-item"><span class="check">✦</span><div><strong>Enlace entre empresas</strong><span>Comunicación comercial entre fabricantes, distribuidores y compradores interesados.</span></div></div>
+   <div class="feature-item"><span class="check">✦</span><div><strong>Seguimiento de colaboraciones</strong><span>Apoyo en el avance de conversaciones y oportunidades comerciales.</span></div></div>
+  </div></div>
+ </div>
+</section>
+<section id="fabricantes" class="products">
+ <div class="container">
+  <div class="section-head"><div class="eyebrow">Para fabricantes internacionales</div><h2>¿Busca desarrollar su mercado en España?</h2><p>NEXORA TECHNOLOGY está abierta a explorar acuerdos de representación comercial con fabricantes que quieran presentar sus soluciones a clientes y empresas españolas.</p></div>
+  <div class="steps">
+   <div class="step"><b>01 / CONOCER</b><h3>Presentación del producto</h3><p>Revisamos catálogo, especificaciones, aplicaciones y propuesta de valor.</p></div>
+   <div class="step"><b>02 / CONECTAR</b><h3>Identificar oportunidades</h3><p>Estudiamos posibles clientes, sectores y canales adecuados para el producto.</p></div>
+   <div class="step"><b>03 / COLABORAR</b><h3>Acordar condiciones</h3><p>Definimos por escrito alcance, territorio, comisiones y protección de contactos antes de iniciar la actividad.</p></div>
+  </div>
+ </div>
+</section>
+<section class="contact" id="contacto">
+ <div class="container contact-grid">
+  <div class="contact-info"><div class="eyebrow">Contacto comercial</div><div class="section-head"><h2>Hablemos de oportunidades</h2><p>¿Representa a un fabricante, busca una solución tecnológica o quiere explorar una colaboración? Cuéntenos brevemente qué necesita.</p></div><p><strong>NEXORA TECHNOLOGY</strong><br>Representación y desarrollo comercial · España</p><p>Utilice el formulario para preparar un mensaje desde su aplicación de correo.</p></div>
+  <form class="contact-card" id="contactForm">
+   <div class="field"><label for="name">Nombre</label><input id="name" name="name" autocomplete="name" placeholder="Tu nombre" required></div>
+   <div class="field"><label for="email">Correo electrónico</label><input id="email" name="email" type="email" autocomplete="email" placeholder="nombre@empresa.com" required></div>
+   <div class="field"><label for="type">Estoy interesado en</label><select id="type" name="type"><option>Representación de fabricante</option><option>Información sobre productos</option><option>Distribución o colaboración comercial</option><option>Otra consulta</option></select></div>
+   <div class="field"><label for="message">Mensaje</label><textarea id="message" name="message" placeholder="Cuéntanos brevemente tu propuesta o consulta..." required></textarea></div>
+   <button class="btn" type="submit">Preparar correo ↗</button>
+   <div class="form-note" id="formNote">El formulario abrirá tu aplicación de correo con el mensaje preparado. Todavía no se ha configurado una dirección corporativa.</div>
+  </form>
+ </div>
+</section>
+</main>
+<footer><div class="container footer-row"><div><strong>NEXORA TECHNOLOGY</strong><div style="margin-top:6px">Representación comercial · España</div></div><div>Innovación · Confianza · Oportunidades</div><div>© <span id="year"></span> NEXORA TECHNOLOGY</div></div></footer>
+</div>
+<script>
+const menuBtn=document.getElementById('menuBtn');
+const nav=document.getElementById('navlinks');
+menuBtn.addEventListener('click',()=>{const open=nav.classList.toggle('open');menuBtn.setAttribute('aria-expanded',String(open));menuBtn.textContent=open?'✕':'☰';});
+nav.querySelectorAll('a').forEach(link=>link.addEventListener('click',()=>{nav.classList.remove('open');menuBtn.setAttribute('aria-expanded','false');menuBtn.textContent='☰';}));
+document.getElementById('year').textContent=new Date().getFullYear();
+document.getElementById('contactForm').addEventListener('submit',event=>{event.preventDefault();const form=new FormData(event.currentTarget);const subject=encodeURIComponent('Consulta comercial – NEXORA TECHNOLOGY');const body=encodeURIComponent('Nombre: '+form.get('name')+'\nCorreo: '+form.get('email')+'\nInterés: '+form.get('type')+'\n\nMensaje:\n'+form.get('message'));document.getElementById('formNote').textContent='Se abrirá tu aplicación de correo. Cuando tengamos el email corporativo, lo añadiremos aquí.';window.location.href='mailto:?subject='+subject+'&body='+body;});
+</script>
+</body>
+</html>
